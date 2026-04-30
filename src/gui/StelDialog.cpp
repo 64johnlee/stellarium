@@ -19,6 +19,7 @@
 
 
 #include "StelDialog.hpp"
+#include "StelCore.hpp"
 #include "StelDialog_p.hpp"
 #include "StelMainView.hpp"
 #include "StelGui.hpp"
@@ -65,6 +66,7 @@ StelDialog::~StelDialog()
 void StelDialog::close()
 {
 	setVisible(false);
+	StelApp::getInstance().getCore()->setClearSkyOnce();
 }
 
 void StelDialog::styleChanged(const QString &style)
