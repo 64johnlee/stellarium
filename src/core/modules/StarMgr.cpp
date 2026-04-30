@@ -1400,6 +1400,7 @@ void StarMgr::draw(StelCore* core)
 				break;
 			}
 			rcmag_table[i].radius *= starsFader.getInterstate() * starStreakScale;
+			rcmag_table[i].luminance *= starStreakScale;
 		}
 		lastMaxSearchLevel = z->level;
 
