@@ -66,7 +66,6 @@ StelDialog::~StelDialog()
 void StelDialog::close()
 {
 	setVisible(false);
-	StelApp::getInstance().getCore()->setClearSkyOnce();
 }
 
 void StelDialog::styleChanged(const QString &style)
@@ -202,6 +201,7 @@ void StelDialog::setVisible(bool v)
 		dialog->hide();
 		//proxy->clearFocus();
 		StelMainView::getInstance().focusSky();
+		StelApp::getInstance().getCore()->setClearSkyOnce();
 	}
 	emit visibleChanged(v);
 }
